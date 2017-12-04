@@ -1,0 +1,46 @@
+﻿@model ShinyTodoWebApp.Models.Todo
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="~/Css/StyleSheet.css" />
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+</head>
+<body>
+    <h1>
+        Update task: 
+    </h1>
+
+    @using (Html.BeginForm("update", "todo"))
+    {
+        <table>
+            <tr>
+                <td>
+                    @Html.LabelFor(t => t.Title)<br />
+                </td>
+                <td>
+                    @Html.TextBoxFor(t => t.Title)<br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(t => t.IsUrgent)<br />
+                </td>
+                <td>
+                    @Html.CheckBoxFor(t => t.IsUrgent)<br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(t => t.IsDone)<br />
+                </td>
+                <td>
+                    @Html.CheckBoxFor(t => t.IsDone)<br />
+                </td>
+            </tr>
+        </table>
+            <br /><button type="submit" style="font-family: Special Elite; font-size: 25px">Update task</button>
+            <br /><br /><a href="/todo" style="background-color: white; color: black">Cancel</a>
+    }
+
+</body>
+</html>

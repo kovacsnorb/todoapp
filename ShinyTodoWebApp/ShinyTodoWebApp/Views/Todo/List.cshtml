@@ -1,0 +1,83 @@
+﻿@model List<ShinyTodoWebApp.Models.Todo>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="~/Css/StyleSheet.css" />
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+</head>
+<body>
+    <h1>
+        My todo list:
+    </h1>
+
+    <a href="/todo/add" style="color: black">Add new todo</a><br /><br />
+
+    <table border="1">
+        <tr>
+            @*<td class="idColumn">
+                Id
+            </td>*@
+            <td class="titleColumn">
+                Title
+            </td>
+            <td class="boolColumn">
+                Is urgent?
+            </td>
+            <td class="boolColumn">
+                Is done?
+            </td>
+            <td class="boolColumn">
+                Delete
+            </td>
+            <td class="boolColumn">
+                Update
+            </td>
+        </tr>
+
+        @{ 
+            foreach (var todo in Model)
+            {
+                <tr>
+                    @*<td class="idColumn">
+                        @todo.Id
+                    </td>*@
+                    <td class="titleColumn">
+                        @todo.Title
+                    </td>
+                    <td class="boolColumn" align="center">
+                        @{
+                            if (@todo.IsUrgent == true)
+                            {
+                                <img src="~/Images/checkbox.png" height="30" />
+                            }
+                            else
+                            {
+                                <img src="~/Images/checkbox_unchecked.png" height="30" />
+                            }
+                        }
+                    </td>
+                    <td class="boolColumn" align="center">
+                        @{
+                            if (@todo.IsDone == true)
+                            {
+                                <img src="~/Images/checkbox.png" height="30" />
+                            }
+                            else
+                            {
+                                <img src="~/Images/checkbox_unchecked.png" height="30" />
+                            }
+                        }
+                    </td>
+                    <td class="boolColumn" align="center">
+                        <a href="/todo/@(todo.Id)/delete"><img src="~/Images/dustbin.png" height="30" /></a>
+                    </td>
+                    <td class="boolColumn" align="center">
+                        <a href="/todo/@(todo.Id)/update"><img src="~/Images/refresh.png" height="30" /></a>
+                    </td>
+                </tr>
+            }
+        }
+
+    </table>
+</body>
+</html>

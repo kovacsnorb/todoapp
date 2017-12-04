@@ -1,0 +1,25 @@
+﻿body {
+    font-family: 'Special Elite';
+    font-size: 25px;
+    background-image: url(../Images/background22.jpg);
+    filter: 50;
+}
+
+td.idColumn{
+    width: 50px;
+}
+
+td.titleColumn {
+    width: 300px;
+}
+
+td.boolColumn {
+    width: 120px;
+    vertical-align:central;
+    align-content: center;
+}
+
+table {
+    background-image: url(../Images/background4.jpg);
+    font-size: 22px;
+}
